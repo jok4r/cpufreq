@@ -74,8 +74,9 @@ class cpuFreq:
 
                 fpath = path.join("cpu0", "cpufreq",
                                   "scaling_available_frequencies")
-                dataf = cpuFreq.__instance.__read_cpu_file(fpath)
-                dataf = dataf.rstrip("\n").split()
+                #dataf = cpuFreq.__instance.__read_cpu_file(fpath)
+                #dataf = dataf.rstrip("\n").split()
+                dataf = [0, 0, 0]   # cause scaling_available_frequencies not working in all linux systems
 
                 cpuFreq.__instance.driver = datad
                 cpuFreq.__instance.available_governors = datag
